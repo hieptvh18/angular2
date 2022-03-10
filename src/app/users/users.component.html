@@ -1,0 +1,32 @@
+<div class="container">
+    <h2>List users</h2>
+
+    <table class="table tabel-bordered">
+        <thead>
+           <tr>
+            <th>Id</th>
+            <th>Name</th>
+            <th>age</th>
+            <th>phone</th>
+            <th>avatar</th>
+            <th>email</th>
+           </tr>
+        </thead>
+
+        <tbody>
+            <tr *ngFor="let user of users"> 
+                <td>{{user.id}}</td>
+                <td>{{user.name}}</td>
+                <td>{{user.age}}</td>
+                <td>{{user.phone}}</td>
+                <td>
+                    <img width="40px" src="{{user.avatar}}" alt="">
+                    <img width="40px" [src]="user.avatar" alt="">
+                </td>
+                <td>
+                    <button class="btn btn-danger">remove</button>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</div>
