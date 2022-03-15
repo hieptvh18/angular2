@@ -1,0 +1,68 @@
+<div class="container">
+<a href="home">Homepage</a>
+
+    <h2>List users</h2>
+    <form action="">
+        <div class="form-group d-flex col-4">
+            <!-- ham co san input giong ham onkey or onchange -->
+            <input type="search" (input)="search($event)" placeholder="Tim kiem nao " name="keyword" class="form-control">
+            <!-- <button type="button" id="btnSearch" class="btn btn-secondary" (click)="search($event)">Search</button> -->
+        </div>
+        
+    </form>
+
+    <table class="table tabel-bordered">
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Name</th>
+                <th>age</th>
+                <th>phone</th>
+                <th>avatar</th>
+                <th>action</th>
+            </tr>
+        </thead>
+
+        <tbody>
+            <tr *ngFor="let user of arrUserNew">
+                <td>{{user.id}}</td>
+                <td>{{user.name}}</td>
+                <td>{{user.age}}</td>
+                <td>{{user.phone}}</td>
+                <td>
+                    <img width="40px" src="{{user.avatar}}" alt="">
+                    <img width="40px" [src]="user.avatar" alt="">
+                </td>
+                <td>
+                    <button class="btn btn-danger" id="btn-remove" (click)="remove(user.id)">remove</button>
+                    <a href="user-detail/{{user.id}}" class="btn btn-info">view</a>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+
+    <!-- add user -->
+    <h2>ADD USERS</h2>
+
+    <form action="" class="col-6 mb-4">
+        <div class="form-group mb-3">
+            <label for="">name</label>
+            <input type="text" name="name" class="form-control">
+        </div>
+        <div class="form-group mb-3">
+            <label for="">age</label>
+            <input type="text" name="age" class="form-control">
+        </div>
+        <div class="form-group mb-3">
+            <label for="">phone</label>
+            <input type="text" name="phone" class="form-control">
+        </div>
+        <div class="form-group mb-3">
+            <label for="">avatar</label>
+            <input type="text" name="avatar" class="form-control">
+        </div>
+
+        <button class="btn btn-warning">Submit</button>
+    </form>
+
+</div>
