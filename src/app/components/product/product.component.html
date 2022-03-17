@@ -1,0 +1,60 @@
+<div class="container">
+    <!-- productForm is object gom nhieu properties -->
+    {{productForm.value | json}}
+    <br>
+    <!-- {{newProduct | json}} -->
+</div>
+
+<div class="container mt-4">
+    <div class="row">
+        <div class="col-6">
+            <h5>Create product</h5>
+
+            <form action="" #productForm="ngForm">
+                <div class="form-group">
+                    <label for="">name</label>
+                    <input type="text" class="form-control" [(ngModel)]="newProduct.name" name="name" placeholder="Enter home">
+                </div>
+                <div class="form-group">
+                    <label for="">Desc</label>
+                    <input type="text" class="form-control" [(ngModel)] = "newProduct.desc" name="desc" placeholder="Enter desc">
+                </div>
+                <div class="form-group">
+                    <label for="">Price</label>
+                    <input type="text" class="form-control" [(ngModel)] = "newProduct.price" name="price" placeholder="Enter price">
+                </div>
+                <br>
+                <button class="btn btn-success" (click)="onSubmit(productForm.value)" type="submit">Submit</button>
+            </form>
+
+        </div>
+
+        <!-- list -->
+        <div class="col-6">
+            <h5>List product</h5>
+            <table class="table table-bordered mt-4">
+                <thead>
+                    <tr>
+                        <th>ID</th>
+                        <th>Name</th>
+                        <th>Desc</th>
+                        <th>Price</th>
+                        <th>Service</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr *ngFor="let pro of newListProduct">
+                        <td>{{pro.id}}</td>
+                        <td>{{pro.name}}</td>
+                        <td>{{pro.desc}}</td>
+                        <td>{{pro.price}}</td>
+                        <td>
+                            <button type="button" (click)="edit(pro)" class="btn btn-warning">Edit</button>
+                            <button type="button" (click)="remove(pro.id)" class="btn btn-warning">Remove</button>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>

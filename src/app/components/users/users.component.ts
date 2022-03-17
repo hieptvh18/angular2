@@ -77,7 +77,7 @@ export class UsersComponent implements OnInit {
   }
 
   // theem moi suer
-  addUser() {
+  onSubmit() {
 
     // vallidaet
     if (!this.onValidate(this.newUser)) {
@@ -88,12 +88,22 @@ export class UsersComponent implements OnInit {
     // check xem dang sua k
     if(this.flag){
 
-      
+      // check theo id
+      for (let i = 0; i < this.users.length; i++) {
+        if (this.users[i].id === this.newUser.id) {
+          this.users[i] = this.newUser;
+        }
+      }
+      // Dua isEdit ve gia tri goc la false de co the them moi
+      this.flag = false;
+    }else {
+      // 1.2. Gan them id bang do dai mang + 1
+      this.newUser.id = this.users.length + 1;
+      // 2. Push phan tu moi vao mang users
+      this.users.push(this.newUser);
     }
 
-    this.newUser.id = this.users.length + 1;
-    this.users.push(this.newUser);
-
+// refesh value
     this.newUser = {
       id: 0,
       name: '',
@@ -101,21 +111,30 @@ export class UsersComponent implements OnInit {
       phone: '',
       avatar: ''
     };
+
+    console.log(this.users);
+
   }
 
   // validate
   onValidate(obj: any) {
-    if (!obj.name || obj.age <= '0' || !obj.phone || !obj.age || !obj.avatar) {
+    // 1 trong so cac truong chua duoc nhap
+    console.log(obj);
+    // Hoac gia tri cua age <= 0
+    if (!obj.name || !obj.age || !obj.phone || !obj.avatar) {
+      // if (obj.name !== '' || obj.age !== '' || obj.age != '0' .........)
       return false;
     }
-    return true;
 
+    return true;
   }
 
   // 
   flag = false;
   onEdit(obj:any){
     this.flag = true;
+    // Gan du lieu can sua vao newUser
+    this.newUser = obj;
 
   }
 

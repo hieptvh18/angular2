@@ -35,7 +35,7 @@
                 </td>
                 <td>
                     <button class="btn btn-danger" id="btn-remove" (click)="remove(user.id)">remove</button>
-                    <a href="user-detail/{{user.id}}" class="btn btn-info">view</a>
+                    <button type="button" class="btn btn-info" (click)="onEdit(user)">edit</button>
                 </td>
             </tr>
         </tbody>
@@ -62,7 +62,7 @@
             <input type="text" ngModel name="avatar" class="form-control" (input)="onChange($event,'avatarUrl')" [value]="newUser.avatar" >
         </div>
 
-        <button class="btn btn-warning" type="button" [disabled]="!onValidate(newUser)" (click)="addUser()" >Submit</button>
+        <button class="btn btn-warning" type="button"  (click)="onSubmit()" >Submit</button>
     </form>
 
 </div>
