@@ -9,8 +9,17 @@ import { UsersComponent } from './components/users/users.component';
 import { UserDetailComponent } from './components/user-detail/user-detail.component';
 import { ProductComponent } from './components/product/product.component';
 
+// connect api
+import {HttpClientModule} from '@angular/common/http';
+
 // import module form 
 import { FormsModule } from '@angular/forms';
+import { ProductDetailComponent } from './components/product-detail/product-detail.component';
+import { StudentComponent } from './components/student/student.component';
+import { StudentDetailComponent } from './components/student-detail/student-detail.component';
+import { StudentFormComponent } from './components/student-form/student-form.component';
+// service
+import { StudentService } from './services/student.service';
 
 @NgModule({
   declarations: [
@@ -18,15 +27,21 @@ import { FormsModule } from '@angular/forms';
     HomeComponent,
     UsersComponent,
     UserDetailComponent,
-    ProductComponent
+    ProductComponent,
+    ProductDetailComponent,
+    StudentComponent,
+    StudentDetailComponent,
+    StudentFormComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     NgbModule,
-    FormsModule// dua vao de cac component con su dung duoc
+    FormsModule,// dua vao de cac component con su dung duoc,
+    HttpClientModule //https
   ],
-  providers: [],
+  // noi cung cap bl bla (api)
+  providers: [StudentService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

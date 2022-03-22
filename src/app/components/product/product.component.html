@@ -51,6 +51,7 @@
                         <td>
                             <button type="button" (click)="edit(pro)" class="btn btn-warning">Edit</button>
                             <button type="button" (click)="remove(pro.id)" class="btn btn-warning">Remove</button>
+                            <a routerLink="/product/{{pro.id}}">View detail</a>
                         </td>
                     </tr>
                 </tbody>

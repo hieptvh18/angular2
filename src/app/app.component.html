@@ -1,7 +1,48 @@
-<p>Trang chu!</p>
+<!-- view layout -->
+<div class="container">
+    <div class="text-center text-danger">ANGULAR 13.</div>
+    <header>
+        <nav class="navbar navbar-expand-sm bg-light">
 
-<a href="user">User page</a>
+            <div class="container-fluid">
+                <!-- Links -->
+                <ul class="navbar-nav">
+                    <li class="nav-item">
+                        <a class="nav-link" routerLink="/home">home-page</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" routerLink="/product">product-page</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" routerLink="/user">user-page (fake data)</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" routerLink="/students">students (api)</a>
+                    </li>
+                    <li class="nav-item">
+                    </li>
+                </ul>
+            </div>
 
-<app-product></app-product>
+        </nav>
 
-<router-outlet></router-outlet>
+    </header>
+
+    <!-- sisdebar -->
+    <aside>
+        ASIDE
+    </aside>
+
+    <!-- main content -->
+    <main>
+
+        <!-- content change -->
+        <router-outlet></router-outlet>
+        <!-- <app-product></app-product> -->
+    </main>
+
+    <!-- footer -->
+    <footer class="p-3 bg-warning mt-3">
+        <h2>FOoter</h2>
+    </footer>
+</div>
