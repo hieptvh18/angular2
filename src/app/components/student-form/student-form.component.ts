@@ -1,4 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { StudentService } from 'src/app/services/student.service';
+import { ActivatedRoute,Router } from '@angular/router';
+
 
 @Component({
   selector: 'app-student-form',
@@ -7,9 +10,41 @@ import { Component, OnInit } from '@angular/core';
 })
 export class StudentFormComponent implements OnInit {
 
-  constructor() { }
+  private id :any;
+  student:any;
+
+  constructor(private studentService:StudentService,private activedRoute: ActivatedRoute, private router:Router) { }
+
 
   ngOnInit(): void {
+    this.id = this.activedRoute.snapshot.params['id'];
+    this.studentService.getStudent(this.id).subscribe(item=>{
+      this.student = item;
+    })
+
   }
+
+  // submit form
+  onSubmit(obj:object){
+    if(this.id){
+      return this.studentService.update(this.id,obj).subscribe(res=>{
+  
+        alert("edit success!")
+        // redirect url
+        this.router.navigate(['/students'])
+      });
+    }
+
+    // add
+    return this.studentService.storeStudent(obj).subscribe(res=>{
+  
+      alert("add success!")
+      
+      // redirect url
+      this.router.navigate(['/students'])
+    });
+  }
+
+
 
 }

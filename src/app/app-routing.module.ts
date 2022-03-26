@@ -7,6 +7,7 @@ import { ProductComponent } from './components/product/product.component';
 import { ProductDetailComponent } from './components/product-detail/product-detail.component';
 import { StudentComponent } from './components/student/student.component';
 import { StudentDetailComponent } from './components/student-detail/student-detail.component';
+import { StudentFormComponent } from './components/student-form/student-form.component';
 
 const routes: Routes = [
   // define routing
@@ -16,6 +17,8 @@ const routes: Routes = [
   {'path':'product',component:ProductComponent},
   {'path':'product/:id',component:ProductDetailComponent},
   {'path':'students',component:StudentComponent},
+  {'path':'student/form',component:StudentFormComponent},
+  {'path':'student/form/:id',component:StudentFormComponent},
   {'path':'student-detail/:id',component:StudentDetailComponent},
 ];
 

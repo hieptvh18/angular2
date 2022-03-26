@@ -1,9 +1,9 @@
 <div class="container">
-    <a href="home">Homepage</a>
+    <a routerLink="home">Homepage</a>
 
     <h2>List student</h2>
 
-
+    <a routerLink="/student/form" class="nav-link mb-3">Add students</a>
     <table class="table tabel-bordered">
         <thead>
             <tr>
@@ -23,6 +23,7 @@
                 <td>
                     <button class="btn btn-danger" id="btn-remove" (click)="remove(std.id)">remove</button>
                     <a href="student-detail/{{std.id}}" class="btn btn-info">Detail</a>
+                    <a href="student/form/{{std.id}}" class="btn btn-warning">Edit</a>
                 </td>
             </tr>
         </tbody>
@@ -31,25 +32,6 @@
     <!-- add user -->
     <h2>ADD USERS</h2>
 
-    <!-- <form action="" class="col-6 mb-4">
-        <div class="form-group mb-3">
-            <label for="">name</label>
-            <input type="text" ngModel name="name" class="form-control" (input)="onChange($event,'name')" [value]="newUser.name">
-        </div>
-        <div class="form-group mb-3">
-            <label for="">age</label>
-            <input type="text" ngModel name="age" class="form-control" (input)="onChange($event,'age')" [value]="newUser.age">
-        </div>
-        <div class="form-group mb-3">
-            <label for="">phone</label>
-            <input type="text" ngModel name="phone" class="form-control" (input)="onChange($event,'phone')" [value]="newUser.phone">
-        </div>
-        <div class="form-group mb-3">
-            <label for="">avatar</label>
-            <input type="text" ngModel name="avatar" class="form-control" (input)="onChange($event,'avatarUrl')" [value]="newUser.avatar">
-        </div>
 
-        <button class="btn btn-warning" type="button" (click)="onSubmit()">Submit</button>
-                    </form> -->
 
 </div>

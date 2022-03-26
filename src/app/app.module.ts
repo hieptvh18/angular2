@@ -20,6 +20,9 @@ import { StudentDetailComponent } from './components/student-detail/student-deta
 import { StudentFormComponent } from './components/student-form/student-form.component';
 // service
 import { StudentService } from './services/student.service';
+import { AsideComponent } from './layouts/aside/aside.component';
+import { HeaderComponent } from './layouts/header/header.component';
+import { FooterComponent } from './layouts/footer/footer.component';
 
 @NgModule({
   declarations: [
@@ -31,7 +34,10 @@ import { StudentService } from './services/student.service';
     ProductDetailComponent,
     StudentComponent,
     StudentDetailComponent,
-    StudentFormComponent
+    StudentFormComponent,
+    AsideComponent,
+    HeaderComponent,
+    FooterComponent
   ],
   imports: [
     BrowserModule,
