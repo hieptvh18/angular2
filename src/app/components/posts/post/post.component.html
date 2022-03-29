@@ -1,0 +1,26 @@
+<a class="nav-link" routerLink="/posts/form">create new post</a>
+
+
+<h3>list posts</h3>
+
+<table class="table table-bodered">
+    <thead>
+        <tr>
+            <th>ID</th>
+            <th>title</th>
+            <th>Content</th>
+            <th>Service</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let post of posts">
+            <td>{{post.id}}</td>
+            <td>{{post.title}}</td>
+            <td>{{post.content}}</td>
+            <td>
+                <a href="/posts/post-detail/{{post.id}}" class="btn btn-info">detail</a>
+                <button class="btn btn-danger" (click)="remove(post.id)">remove</button>
+            </td>
+        </tr>
+    </tbody>
+</table>

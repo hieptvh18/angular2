@@ -1,0 +1,34 @@
+<p>post-form reactive works!</p>
+{{postForm.value|json}}
+<div class="content">
+    <form [formGroup]="postForm" action="" (submit)="onSubmit(postForm.value)">
+        <div class="form-group">
+            <label for="">Title</label>
+            <input type="text" name="" placeholder="enter title" formControlName="title" id="" class="form-control">
+
+            <div class="text-danger" *ngIf="postForm.get('title')?.dirty">
+                <p *ngIf="postForm.get('title')?.errors?.['required']">Tieu de bat buoc nhap</p>
+            </div>
+       </div>
+        <div class="form-group">
+            <label for="">Content</label>
+            <textarea type="text" name="" placeholder="enter content" formControlName="content" id="" class="form-control"> </textarea>
+
+            <div class="text-danger" *ngIf="postForm.get('content')?.dirty">
+                <p *ngIf="postForm.get('content')?.errors?.['required']">Content de bat buoc nhap</p>
+                <p *ngIf="postForm.get('content')?.errors?.['minlength']">Content it nhat 5 ki tu</p>
+            </div>
+        </div>
+
+        <div class="form-check">
+            <p>Status</p>
+            <input type="radio" class="form-check-input" formControlName="status" name="status" id="s1" value="0"> <label for="s1" class="form-check-label">0</label>
+            <br>
+            <input type="radio" class="form-check-input" formControlName="status" name="status" id="s2" value="1"> <label for="s2" class="form-check-label">2</label>
+        </div>
+
+
+        <button type="submit" class="btn btn-dark">Submit</button>
+    </form>
+</div>
+

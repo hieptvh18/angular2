@@ -13,7 +13,7 @@ import { ProductComponent } from './components/product/product.component';
 import {HttpClientModule} from '@angular/common/http';
 
 // import module form 
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { ProductDetailComponent } from './components/product-detail/product-detail.component';
 import { StudentComponent } from './components/student/student.component';
 import { StudentDetailComponent } from './components/student-detail/student-detail.component';
@@ -23,6 +23,9 @@ import { StudentService } from './services/student.service';
 import { AsideComponent } from './layouts/aside/aside.component';
 import { HeaderComponent } from './layouts/header/header.component';
 import { FooterComponent } from './layouts/footer/footer.component';
+import { PostComponent } from './components/posts/post/post.component';
+import { PostDetailComponent } from './components/posts/post-detail/post-detail.component';
+import { PostFormComponent } from './components/posts/post-form/post-form.component';
 
 @NgModule({
   declarations: [
@@ -37,14 +40,18 @@ import { FooterComponent } from './layouts/footer/footer.component';
     StudentFormComponent,
     AsideComponent,
     HeaderComponent,
-    FooterComponent
+    FooterComponent,
+    PostComponent,
+    PostDetailComponent,
+    PostFormComponent,
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     NgbModule,
     FormsModule,// dua vao de cac component con su dung duoc,
-    HttpClientModule //https
+    HttpClientModule, //https,
+    ReactiveFormsModule//form reactive
   ],
   // noi cung cap bl bla (api)
   providers: [StudentService],

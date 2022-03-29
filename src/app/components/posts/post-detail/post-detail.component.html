@@ -1,0 +1,14 @@
+<p>post-detail works!</p>
+
+<div class="content">
+    <h3>{{post.title}}</h3>
+
+    <div class="content">
+        {{post.content}}
+    </div>
+
+    <div class="status">
+        <p *ngIf="post.status == 0">Chua active</p>
+        <p *ngIf="post.status == 1">Tinh trang: Da active</p>
+    </div>
+</div>

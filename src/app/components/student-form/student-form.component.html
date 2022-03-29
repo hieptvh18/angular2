@@ -7,13 +7,11 @@
         <input type="text" required minlength="4" [(ngModel)]="student.name" name="name" placeholder="name" class="form-control" id="name" #name="ngModel" required="">
 
         <!-- check neu co loi nao la .. thi in ra ... -->
-        <div class="er text-danger" *ngIf="name.errors?.['required']">Ten khong duoc rong!</div>
     </div>
 
     <div class="form-group">
         <label for="">Class</label>
         <input type="text" [(ngModel)]="student.class" name="class" placeholder="class" class="form-control" id="class" #class="ngModel" required="">
-
     </div>
 
     <div *ngIf="studentForm.form.dirty" class="text-danger">
@@ -24,7 +22,6 @@
     </div>
 
     <div><button class="btn btn-info" [disabled]="studentForm.form.invalid">Submit</button></div>
-
 
 
 </form>

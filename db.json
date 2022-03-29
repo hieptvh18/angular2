@@ -19,11 +19,20 @@
       "name": "Prof. Nelle Hamill PhD1",
       "class": "12312",
       "id": 9
+    }
+  ],
+  "posts": [
+    {
+      "id": 2,
+      "title": "Day la trang tin giat hahah",
+      "content": "ngay 14 co 1 nam sinh ten duc ..",
+      "status": 1
     },
     {
-      "name": "Hiep3",
-      "class": "we123",
-      "id": 10
+      "title": "tttt",
+      "content": "adasdada",
+      "status": "1",
+      "id": 3
     }
   ]
 }
