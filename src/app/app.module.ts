@@ -5,19 +5,19 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { HomeComponent } from './components/home/home.component';
-import { UsersComponent } from './components/users/users.component';
-import { UserDetailComponent } from './components/user-detail/user-detail.component';
-import { ProductComponent } from './components/product/product.component';
+import { UsersComponent } from './components/users/user/users.component';
+import { UserDetailComponent } from './components/users/user-detail/user-detail.component';
+import { ProductComponent } from './components/products/product/product.component';
 
 // connect api
 import {HttpClientModule} from '@angular/common/http';
 
 // import module form 
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
-import { ProductDetailComponent } from './components/product-detail/product-detail.component';
-import { StudentComponent } from './components/student/student.component';
-import { StudentDetailComponent } from './components/student-detail/student-detail.component';
-import { StudentFormComponent } from './components/student-form/student-form.component';
+import { ProductDetailComponent } from './components/products/product-detail/product-detail.component';
+import { StudentComponent } from './components/students/student/student.component';
+import { StudentDetailComponent } from './components/students/student-detail/student-detail.component';
+import { StudentFormComponent } from './components/students/student-form/student-form.component';
 // service
 import { StudentService } from './services/student.service';
 import { AsideComponent } from './layouts/aside/aside.component';
