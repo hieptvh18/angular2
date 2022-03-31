@@ -6,18 +6,18 @@
             <label for="">Title</label>
             <input type="text" name="" placeholder="enter title" formControlName="title" id="" class="form-control">
 
-            <div class="text-danger" *ngIf="postForm.get('title')?.dirty">
-                <p *ngIf="postForm.get('title')?.errors?.['required']">Tieu de bat buoc nhap</p>
-            </div>
+          <app-show-error [formField]="postForm.get('title')" key="Tieu de"></app-show-error>
        </div>
         <div class="form-group">
             <label for="">Content</label>
             <textarea type="text" name="" placeholder="enter content" formControlName="content" id="" class="form-control"> </textarea>
 
-            <div class="text-danger" *ngIf="postForm.get('content')?.dirty">
+            <!-- <div class="text-danger" *ngIf="postForm.get('content')?.dirty">
                 <p *ngIf="postForm.get('content')?.errors?.['required']">Content de bat buoc nhap</p>
                 <p *ngIf="postForm.get('content')?.errors?.['minlength']">Content it nhat 5 ki tu</p>
-            </div>
+            </div> -->
+          <app-show-error [formField]="postForm.get('content')" key="Noi dung"></app-show-error>
+
         </div>
 
         <div class="form-check">
@@ -28,7 +28,7 @@
         </div>
 
 
-        <button type="submit" class="btn btn-dark">Submit</button>
+        <button type="submit" class="btn btn-dark" [disabled]="postForm.invalid">Submit</button>
     </form>
 </div>
 

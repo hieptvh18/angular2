@@ -10,7 +10,8 @@
                 <th>Id</th>
                 <th>Name</th>
                 <th>Class</th>
-
+                <th>status</th>
+                <th>Service</th>
             </tr>
         </thead>
 
@@ -19,6 +20,10 @@
                 <td>{{std.id}}</td>
                 <td>{{std.name}}</td>
                 <td>{{std.class}}</td>
+                <td>
+                    <app-status-btn [status]="std.status"
+                    (changeStatus)="parentChangeStatus($event,std)"></app-status-btn>
+                </td>
 
                 <td>
                     <button class="btn btn-danger" id="btn-remove" (click)="remove(std.id)">remove</button>

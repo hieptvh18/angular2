@@ -26,6 +26,8 @@ import { FooterComponent } from './layouts/footer/footer.component';
 import { PostComponent } from './components/posts/post/post.component';
 import { PostDetailComponent } from './components/posts/post-detail/post-detail.component';
 import { PostFormComponent } from './components/posts/post-form/post-form.component';
+import { ShowErrorComponent } from './components/component/show-error/show-error.component';
+import { StatusBtnComponent } from './components/component/status-btn/status-btn.component';
 
 @NgModule({
   declarations: [
@@ -44,6 +46,8 @@ import { PostFormComponent } from './components/posts/post-form/post-form.compon
     PostComponent,
     PostDetailComponent,
     PostFormComponent,
+    ShowErrorComponent,
+    StatusBtnComponent,
   ],
   imports: [
     BrowserModule,

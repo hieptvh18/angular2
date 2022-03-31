@@ -1,0 +1,6 @@
+<!-- define displat err -->
+
+<div class="text-danger" *ngIf="formField.dirty">
+  <p *ngIf="formField.errors?.['required']">{{ key }} bat buoc nhap</p>
+  <p *ngIf="formField.errors?.['minlength']">{{ key }} it nhat 6 ki tu</p>
+</div>

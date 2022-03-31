@@ -34,7 +34,8 @@ export class StudentService {
 
   update(id:number|string, data:any){
     return this.http.put(`${apiURl}/${id}`,data); //https://localhost:3000/students/1
-
   }
+
+  
 
 }
